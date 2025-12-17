@@ -50,12 +50,16 @@ class MainTabController:UIViewController,UIViewExtension{
     
     
     @IBAction func checkButton(_ sender: UIButton) {
-        guard let word = wordLabel.text,let userAnswer=synonymTextField.text else{
-            return
-        }
-        let synonym=SynonymData(word: word, userAnswer: userAnswer)
-        netManager.fetchData(endpoint:.check, requestData:synonym)
-    }
+        guard let word = wordLabel.text,let userAnswer=synonymTextField.text else{return}
+         let synonym=SynonymData(word: word, userAnswer: userAnswer)
+         netManager.fetchData(endpoint:.check, requestData:synonym)
+         performSegue(withIdentifier: "synonym", sender: self)
+     }
+     
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+         guard let destinationVC=segue.destination as? SynonymAnswerViewController else{return}
+         destinationVC.netManager=self.netManager
+     }
         var flow:WordFlow!
         let netManager=NetworkManager()
     
