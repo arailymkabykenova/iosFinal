@@ -523,7 +523,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="8Xy-Uy-gQb"/>
                     <connections>
+                        <outlet property="checkButton" destination="Y6l-am-pC3" id="1Ls-4a-gO0"/>
                         <outlet property="exampleLabel" destination="2b1-Yc-pbb" id="Esa-Hm-dN2"/>
+                        <outlet property="generateButton" destination="069-J3-mhx" id="0Gl-lc-crh"/>
                         <outlet property="imageTop" destination="2rl-q4-XXw" id="EYh-Kd-AiI"/>
                         <outlet property="meaningLabel" destination="lAC-1q-yTk" id="dlh-Ic-Aza"/>
                         <outlet property="synonymTextField" destination="Iwf-AX-yYO" id="PQb-nL-FXP"/>

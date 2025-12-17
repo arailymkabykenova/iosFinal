@@ -33,7 +33,8 @@ class MainTabController:UIViewController,UIViewExtension{
     @IBOutlet weak var imageTop: UIImageView!
     @IBOutlet weak var topicTextsField: UITextField!
     @IBOutlet var buttonsAppeareance:[UIButton]!
-    
+    @IBOutlet weak var generateButton:UIButton!
+    @IBOutlet weak var checkButton:UIButton!
     @IBOutlet weak var synonymTextField: UITextField!
     @IBOutlet weak var wordLabel: UILabel!
     @IBOutlet weak var meaningLabel: UILabel!
@@ -65,12 +66,30 @@ class MainTabController:UIViewController,UIViewExtension{
     
         override func viewDidLoad() {
             super.viewDidLoad()
+            generateButton.isEnabled = false
+               checkButton.isEnabled = false
+
+               topicTextsField.addTarget(self,
+                                         action: #selector(textFieldDidChange),
+                                         for: .editingChanged)
+
+               synonymTextField.addTarget(self,
+                                          action: #selector(textFieldDidChange),
+                                          for: .editingChanged)
             netManager.delegate=self
             topicTextsField.delegate=self
             synonymTextField.delegate=self
             styleAllButtons(buttonsAppeareance)
             styleAllViews(views)
+            
         }
+    @objc func textFieldDidChange() {
+        let isTopicFilled = !(topicTextsField.text?.isEmpty ?? true)
+        let isSynonymFilled = !(synonymTextField.text?.isEmpty ?? true)
+
+        generateButton.isEnabled = isTopicFilled
+        checkButton.isEnabled = isSynonymFilled
+    }
     }
     extension MainTabController:UITextFieldDelegate{
         func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -111,6 +130,10 @@ extension MainTabController:WordManagerDelegate{
     ) {
         super.touchesBegan(touches, with: event)
         view.endEditing(true)
+    }
+    func didCheckSynonym() {
+        synonymTextField.text = ""
+        checkButton.isEnabled = false
     }
 }
 

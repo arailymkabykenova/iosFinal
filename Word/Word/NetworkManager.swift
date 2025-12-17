@@ -8,6 +8,7 @@ import Foundation
 
 protocol WordManagerDelegate:AnyObject{
     func didUpdateWord(_ wordManager:NetworkManager,_ recievedData:RecievedData)
+    func didCheckSynonym()
 }
 
 protocol SynonymCheckManager:AnyObject{
@@ -62,6 +63,7 @@ class NetworkManager{
                         if let recievedWord=self.parseWordJSON(safeData){
                             DispatchQueue.main.async {
                                 self.delegate?.didUpdateWord(self,recievedWord)
+                                self.delegate?.didCheckSynonym()
                             }
                         }
                     case .check:
