@@ -16,20 +16,20 @@ class TopicViewController:UIViewController,UIViewExtension{
         flow.category=sender.titleLabel?.text ?? "verbs"
         performSegue(withIdentifier: "category", sender: self)
     }
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if let tabBarController = segue.destination as? UITabBarController {
-//            // перебираем все контроллеры таб-бара
-//            for navController in tabBarController.viewControllers ?? [] {
-//                // проверяем, что это Navigation Controller
-//                if let nav = navController as? UINavigationController {
-//                    // теперь достаем главный контроллер из navigation stack
-//                    if let mainVC = nav.viewControllers.first as? MainTabController {
-//                        mainVC.flow = self.flow
-//                    }
-//                }
-//            }
-//        }
-//    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let tabBarController = segue.destination as? UITabBarController {
+            // перебираем все контроллеры таб-бара
+            for navController in tabBarController.viewControllers ?? [] {
+                // проверяем, что это Navigation Controller
+                if let nav = navController as? UINavigationController {
+                    // теперь достаем главный контроллер из navigation stack
+                    if let mainVC = nav.viewControllers.first as? MainTabController {
+                        mainVC.flow = self.flow
+                    }
+                }
+            }
+        }
+    }
 
     
     var flow:WordFlow!
