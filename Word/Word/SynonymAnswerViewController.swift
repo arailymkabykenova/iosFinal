@@ -26,10 +26,35 @@ class SynonymAnswerViewController:UIViewController,UIViewExtension{
     @IBOutlet weak var checkLabel: UILabel!
     @IBOutlet var buttonAppearance:[UIButton]!
     @IBAction func addPhotoButton(_ sender: Any) {
+        let picker=UIImagePickerController()
+        picker.delegate=self
+        picker.sourceType = .photoLibrary
+        picker.allowsEditing=true
+        present(picker, animated: true)
+    }
+    var wordText: String = ""
+    var userAnswerText: String = ""
+    @IBAction func safeButton(_ sender: Any) {
+        var imageName: String? = nil
+        
+        if let image = photoViewImage.image {
+            imageName = ImageStorage.shared.save(image: image)
+        }
+        
+        let newItem = CheckedWord(
+            word: wordMainLabel.text ?? "",
+            userAnswer: synonymLabel.text ?? "",
+            imageName: imageName
+        )
+        
+        var savedItems = Storage.shared.load()
+        savedItems.append(newItem)
+        Storage.shared.save(savedItems)
+        dismiss(animated: true)
+        //navigationController?.popViewController(animated: true)
     }
     
-    @IBAction func safeButton(_ sender: Any) {
-    }
+    
     var netManager:NetworkManager!
     @IBOutlet weak var photoViewImage: UIImageView!
     override func viewDidLoad() {
@@ -37,6 +62,8 @@ class SynonymAnswerViewController:UIViewController,UIViewExtension{
         netManager.delegate2=self
         styleAllButtons(buttonAppearance)
         styleAllViews(labelImageViews)
+        wordMainLabel.text = wordText
+        synonymLabel.text = userAnswerText
     }
 }
 extension SynonymAnswerViewController:SynonymCheckManager{
@@ -51,5 +78,13 @@ extension SynonymAnswerViewController:SynonymCheckManager{
             checkLabel.text="FALSE"
             photoViewImage.image=UIImage(named: "sad")
         }
+    }
+}
+extension SynonymAnswerViewController:UIImagePickerControllerDelegate, UINavigationControllerDelegate{
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let image = info[.editedImage] as? UIImage ?? info[.originalImage] as? UIImage {
+            photoViewImage.image = image
+        }
+        picker.dismiss(animated: true)
     }
 }
