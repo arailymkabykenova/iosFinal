@@ -514,22 +514,22 @@
                                         <rect key="frame" x="0.0" y="416" width="393" height="170.33333333333337"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="fMd-ho-IhJ">
-                                                <rect key="frame" x="30" y="29.999999999999993" width="333" height="110.33333333333331"/>
+                                                <rect key="frame" x="10" y="10" width="373" height="150.33333333333334"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Word" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EEZ-n0-d7W">
-                                                        <rect key="frame" x="0.0" y="0.0" width="333" height="36.666666666666664"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="373" height="50"/>
                                                         <fontDescription key="fontDescription" name="STIXTwoText_Bold" family="STIX Two Text" pointSize="23"/>
                                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meaning" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lAC-1q-yTk">
-                                                        <rect key="frame" x="0.0" y="36.666666666666686" width="333" height="37"/>
+                                                        <rect key="frame" x="0.0" y="50" width="373" height="50.333333333333343"/>
                                                         <fontDescription key="fontDescription" name="STIXTwoText_Medium" family="STIX Two Text" pointSize="22"/>
                                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Example" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2b1-Yc-pbb">
-                                                        <rect key="frame" x="0.0" y="73.666666666666629" width="333" height="36.666666666666657"/>
+                                                        <rect key="frame" x="0.0" y="100.33333333333337" width="373" height="50"/>
                                                         <fontDescription key="fontDescription" name="STIXTwoText" family="STIX Two Text" pointSize="20"/>
                                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
@@ -539,10 +539,10 @@
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="fMd-ho-IhJ" secondAttribute="trailing" constant="30" id="5wr-SL-7ML"/>
-                                            <constraint firstItem="fMd-ho-IhJ" firstAttribute="top" secondItem="OLW-Ge-QTT" secondAttribute="top" constant="30" id="CVu-Dy-hlq"/>
-                                            <constraint firstAttribute="bottom" secondItem="fMd-ho-IhJ" secondAttribute="bottom" constant="30" id="Cdy-gA-nw6"/>
-                                            <constraint firstItem="fMd-ho-IhJ" firstAttribute="leading" secondItem="OLW-Ge-QTT" secondAttribute="leading" constant="30" id="NK1-7H-Ob8"/>
+                                            <constraint firstAttribute="trailing" secondItem="fMd-ho-IhJ" secondAttribute="trailing" constant="10" id="5wr-SL-7ML"/>
+                                            <constraint firstItem="fMd-ho-IhJ" firstAttribute="top" secondItem="OLW-Ge-QTT" secondAttribute="top" constant="10" id="CVu-Dy-hlq"/>
+                                            <constraint firstAttribute="bottom" secondItem="fMd-ho-IhJ" secondAttribute="bottom" constant="10" id="Cdy-gA-nw6"/>
+                                            <constraint firstItem="fMd-ho-IhJ" firstAttribute="leading" secondItem="OLW-Ge-QTT" secondAttribute="leading" constant="10" id="NK1-7H-Ob8"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rcp-Vk-Yl2">
@@ -644,7 +644,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Izt-KD-pph">
                                                 <rect key="frame" x="0.0" y="0.0" width="129" height="289.66666666666669"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Synonym" textAlignment="center" lineBreakMode="characterWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WVp-z0-Qfx">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="characterWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WVp-z0-Qfx">
                                                         <rect key="frame" x="0.0" y="0.0" width="129" height="289.66666666666669"/>
                                                         <fontDescription key="fontDescription" name="STIXTwoText_Medium" family="STIX Two Text" pointSize="21"/>
                                                         <nil key="textColor"/>
@@ -662,15 +662,20 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U06-3Y-eIO">
                                                 <rect key="frame" x="132" y="0.0" width="129" height="289.66666666666669"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="check" textAlignment="center" lineBreakMode="characterWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zz3-O8-043">
-                                                        <rect key="frame" x="0.0" y="-0.66666666666662877" width="96" height="289.66666666666663"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                        <fontDescription key="fontDescription" name="STIXTwoText_Medium" family="STIX Two Text" pointSize="18"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="characterWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zz3-O8-043">
+                                                        <rect key="frame" x="0.0" y="0.0" width="129" height="289.66666666666669"/>
+                                                        <fontDescription key="fontDescription" name="STIXTwoText-Italic_SemiBold-Italic" family="STIX Two Text" pointSize="18"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstItem="zz3-O8-043" firstAttribute="leading" secondItem="U06-3Y-eIO" secondAttribute="leading" id="Ifs-O9-Zfn"/>
+                                                    <constraint firstAttribute="trailing" secondItem="zz3-O8-043" secondAttribute="trailing" id="IkJ-ZY-UIN"/>
+                                                    <constraint firstAttribute="bottom" secondItem="zz3-O8-043" secondAttribute="bottom" id="ajb-Gi-XRP"/>
+                                                    <constraint firstItem="zz3-O8-043" firstAttribute="top" secondItem="U06-3Y-eIO" secondAttribute="top" id="ums-ea-bvy"/>
+                                                </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z6i-Dd-dFP">
                                                 <rect key="frame" x="264" y="0.0" width="129" height="289.66666666666669"/>
@@ -679,10 +684,7 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="129" height="289.66666666666669"/>
                                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="plain" title="add photo" titleAlignment="center">
-                                                            <fontDescription key="titleFontDescription" name="STIXTwoText_SemiBold" family="STIX Two Text" pointSize="18"/>
-                                                            <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        </buttonConfiguration>
+                                                        <buttonConfiguration key="configuration" style="plain"/>
                                                         <connections>
                                                             <action selector="addPhotoButton:" destination="mee-cq-pjO" eventType="touchUpInside" id="old-nc-5NO"/>
                                                         </connections>
@@ -710,7 +712,7 @@
                                             <action selector="safeButton:" destination="mee-cq-pjO" eventType="touchUpInside" id="Mmk-QM-cb0"/>
                                         </connections>
                                     </button>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="books" translatesAutoresizingMaskIntoConstraints="NO" id="LOx-6S-eP3">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image 1" translatesAutoresizingMaskIntoConstraints="NO" id="LOx-6S-eP3">
                                         <rect key="frame" x="0.0" y="434.33333333333326" width="393" height="289.66666666666674"/>
                                     </imageView>
                                 </subviews>
@@ -811,7 +813,7 @@
         <scene sceneID="nB3-XD-Kjg">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="5M6-6H-kPC" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="words" image="book.closed" catalog="system" selectedImage="book.closed.fill" id="Rcu-8f-RP2">
+                    <tabBarItem key="tabBarItem" title="words" image="book.closed" catalog="system" id="Rcu-8f-RP2">
                         <color key="badgeColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBarItem>
                     <toolbarItems/>
@@ -830,9 +832,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Image 1" width="483" height="423"/>
         <image name="book.closed" catalog="system" width="115" height="128"/>
-        <image name="book.closed.fill" catalog="system" width="115" height="128"/>
-        <image name="books" width="639" height="783"/>
         <image name="firstPageMe" width="539" height="752"/>
         <image name="light" width="819" height="980"/>
         <image name="long.text.page.and.pencil" catalog="system" width="112" height="128"/>

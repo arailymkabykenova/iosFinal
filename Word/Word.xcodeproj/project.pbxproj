@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		416612172EF3806C00ED6996 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 416612162EF3806C00ED6996 /* Lottie */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		416611752EF331CB00ED6996 /* Word.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Word.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -36,6 +40,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				416612172EF3806C00ED6996 /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +83,7 @@
 			);
 			name = Word;
 			packageProductDependencies = (
+				416612162EF3806C00ED6996 /* Lottie */,
 			);
 			productName = Word;
 			productReference = 416611752EF331CB00ED6996 /* Word.app */;
@@ -107,6 +113,9 @@
 			);
 			mainGroup = 4166116C2EF331CB00ED6996;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				416612152EF3806C00ED6996 /* XCRemoteSwiftPackageReference "lottie-ios" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 416611762EF331CB00ED6996 /* Products */;
 			projectDirPath = "";
@@ -337,6 +346,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		416612152EF3806C00ED6996 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.5.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		416612162EF3806C00ED6996 /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 416612152EF3806C00ED6996 /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 4166116D2EF331CB00ED6996 /* Project object */;
 }

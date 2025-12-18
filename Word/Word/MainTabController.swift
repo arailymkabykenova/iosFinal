@@ -5,9 +5,10 @@
 //  Created by Арайлым Кабыкенова on 18.12.2025.
 //
 
-
+import Lottie
 import UIKit
 class MainTabController:UIViewController,UIViewExtension{
+    var loadingAnimationView: LottieAnimationView?
     func updateUI(_ object: UIView) {
         object.backgroundColor = .systemYellow
         object.layer.cornerRadius = 8
@@ -41,11 +42,12 @@ class MainTabController:UIViewController,UIViewExtension{
     @IBOutlet weak var exampleLabel: UILabel!
     
     @IBAction func generateButton(_ sender: UIButton) {
-        flow.theme=topicTextsField.text ?? "life"
+        flow.theme=topicTextsField.text ?? "english"
         guard let level=flow.level , let category = flow.category , let theme = flow.theme else{
             return
         }
         let request=SendData(level: level, category: category, theme: theme)
+        showLoadingAnimation()
         netManager.fetchData(endpoint: .getWord, requestData: request)
     }
     
@@ -132,8 +134,32 @@ extension MainTabController:WordManagerDelegate{
         view.endEditing(true)
     }
     func didCheckSynonym() {
+        hideLoadingAnimation() 
         synonymTextField.text = ""
         checkButton.isEnabled = false
     }
 }
 
+extension MainTabController{
+    func showLoadingAnimation() {
+        loadingAnimationView?.removeFromSuperview()
+    
+        loadingAnimationView = LottieAnimationView(name: "Cooking Preloader")
+        guard let loadingAnimationView else { return }
+
+        loadingAnimationView.contentMode = .scaleAspectFit
+        loadingAnimationView.loopMode = .loop
+
+        view.addSubview(loadingAnimationView)
+
+        loadingAnimationView.frame = CGRect(x: 0, y: 0, width: 150, height: 150)
+        loadingAnimationView.center = view.center
+
+        loadingAnimationView.play()
+    }
+
+    func hideLoadingAnimation() {
+        loadingAnimationView?.stop()
+        loadingAnimationView?.removeFromSuperview()
+    }
+}

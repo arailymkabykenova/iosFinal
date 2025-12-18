@@ -6,7 +6,11 @@
 //
 
 import UIKit
+import Lottie
 class SynonymAnswerViewController:UIViewController,UIViewExtension{
+    var loadingAnimationView: LottieAnimationView?
+
+
     func updateUI(_ object: UIView) {
         if let button = object as? UIButton {
             button.layer.cornerRadius = 8
@@ -59,11 +63,13 @@ class SynonymAnswerViewController:UIViewController,UIViewExtension{
     @IBOutlet weak var photoViewImage: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        wordMainLabel.text = wordText
+        synonymLabel.text = userAnswerText
+        showLoadingAnimation()
         netManager.delegate2=self
         styleAllButtons(buttonAppearance)
         styleAllViews(labelImageViews)
-        wordMainLabel.text = wordText
-        synonymLabel.text = userAnswerText
+        
     }
 }
 extension SynonymAnswerViewController:SynonymCheckManager{
@@ -72,9 +78,11 @@ extension SynonymAnswerViewController:SynonymCheckManager{
         synonymLabel.text=recievedData.data.userAnswer
         wordMainLabel.text=recievedData.data.word
         if recievedData.data.correct{
+            hideLoadingAnimation()
             checkLabel.text="RIGHT"
             photoViewImage.image=UIImage(named: "win")
         }else{
+            hideLoadingAnimation()
             checkLabel.text="FALSE"
             photoViewImage.image=UIImage(named: "sad")
         }
@@ -86,5 +94,27 @@ extension SynonymAnswerViewController:UIImagePickerControllerDelegate, UINavigat
             photoViewImage.image = image
         }
         picker.dismiss(animated: true)
+    }
+}
+extension SynonymAnswerViewController{
+    func showLoadingAnimation(){
+        loadingAnimationView?.removeFromSuperview()
+            loadingAnimationView = LottieAnimationView(name: "Cats for new year and christmas")
+            guard let loadingAnimationView else { return }
+
+            loadingAnimationView.contentMode = .scaleAspectFit
+            loadingAnimationView.loopMode = .loop
+
+            view.addSubview(loadingAnimationView)
+
+            // Через frame
+            loadingAnimationView.frame = CGRect(x: 0, y: 0, width: 500, height: 500)
+            loadingAnimationView.center = view.center
+
+            loadingAnimationView.play()
+    }
+    func hideLoadingAnimation() {
+        loadingAnimationView?.stop()
+        loadingAnimationView?.removeFromSuperview()
     }
 }
