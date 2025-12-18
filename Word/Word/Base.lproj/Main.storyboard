@@ -690,7 +690,7 @@
                                                         </connections>
                                                     </button>
                                                 </subviews>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstItem="FEX-tH-fFH" firstAttribute="leading" secondItem="Z6i-Dd-dFP" secondAttribute="leading" id="IcP-Dh-DvH"/>
                                                     <constraint firstAttribute="trailing" secondItem="FEX-tH-fFH" secondAttribute="trailing" id="OvB-tA-BG4"/>
@@ -712,7 +712,7 @@
                                             <action selector="safeButton:" destination="mee-cq-pjO" eventType="touchUpInside" id="Mmk-QM-cb0"/>
                                         </connections>
                                     </button>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image 1" translatesAutoresizingMaskIntoConstraints="NO" id="LOx-6S-eP3">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="HeartButton.gif" translatesAutoresizingMaskIntoConstraints="NO" id="LOx-6S-eP3">
                                         <rect key="frame" x="0.0" y="434.33333333333326" width="393" height="289.66666666666674"/>
                                     </imageView>
                                 </subviews>
@@ -832,7 +832,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Image 1" width="483" height="423"/>
+        <image name="HeartButton.gif" width="206" height="184"/>
         <image name="book.closed" catalog="system" width="115" height="128"/>
         <image name="firstPageMe" width="539" height="752"/>
         <image name="light" width="819" height="980"/>
